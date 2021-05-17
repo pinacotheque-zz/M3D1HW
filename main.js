@@ -2,20 +2,6 @@
 
 
 
-12)
-Create a function to find the types of a given angle.
-
-Types of angles:
-    Acute angle: An angle between 0 and 90 degrees.
-    Right angle: An 90 degree angle.
-    Obtuse angle: An angle between 90 and 180 degrees.
-    Straight angle: A 180 degree angle.
-
-13)
-Create a function to find the index of the greatest element of a given array of integers
-
-14)
-Create a function to get the largest even number from an array of integers.
 
 15)
 Create a function to check from two given integers, whether one is positive and another one is negative.
@@ -175,3 +161,40 @@ function longestStr(str1, str2) {
   } else console.log("lenght is same");
 }
 longestStr("gamze", "semih");
+
+// 12)Create a function to find the types of a given angle.
+// Types of angles:
+//     Acute angle: An angle between 0 and 90 degrees.
+//     Right angle: An 90 degree angle.
+//     Obtuse angle: An angle between 90 and 180 degrees.
+//     Straight angle: A 180 degree angle.
+
+function findAngle(ang1) {
+  if (0 < ang1 < 90) {
+    console.log("Acute angle");
+  } else if ((ang1 = 90)) {
+    console.log("Right angle");
+  } else if (90 <= ang1 <= 180) {
+    console.log("Obtuse angle");
+  } else if ((ang1 = 180)) {
+    console.log("Straight angle");
+  } else return false;
+}
+findAngle(100);
+
+// 13)Create a function to find the index of the greatest element of a given array of integers
+
+// 14)Create a function to get the largest even number from an array of integers.
+
+arr2 = [2, 6, 7, 4, 9, 5, 14];
+
+function largestEl() {
+  largest = 0;
+  for (i = 0; i < arr2.length; i++) {
+    if (arr2[i] % 2 === 0 && arr2[i] > largest) {
+      largest = arr2[i];
+    }
+  }
+  return largest;
+}
+console.log(largestEl());
