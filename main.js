@@ -154,21 +154,27 @@ findAngle(180);
 
 // 13)Create a function to find the index of the greatest element of a given array of integers
 console.log("*******Q13*******");
+function greatestIndex(arr) {
+  const largest = [...arr].sort((a, b) => b - a)[0];
+  console.log(largest);
+  return arr.indexOf(largest);
+}
+console.log(greatestIndex([4, 8, 2]));
 
 // 14)Create a function to get the largest even number from an array of integers.
 console.log("*******Q14*******");
-arr2 = [2, 6, 7, 4, 9, 5, 14];
 
 function largestEl(arr) {
+  const temp = [];
   largest = 0;
-  for (i = 0; i < arr2.length; i++) {
-    if (arr2[i] % 2 === 0 && arr2[i] > largest) {
-      largest = arr2[i];
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0 && arr[i] > largest) {
+      largest = arr[i];
     }
   }
   return largest;
 }
-console.log(largestEl());
+console.log(largestEl([3, 8, 1, 9, 4, 6]));
 
 // 15)Create a function to check from two given integers, whether one is positive and another one is negative.
 console.log("*******Q15*******");
@@ -187,7 +193,14 @@ pozneg(4, 5);
 
 console.log("*******Q16*******");
 
-function lowerCase(str) {}
+function lowerCase(str) {
+  if (str.length < 3) {
+    return str.toUpperCase();
+  } else {
+    return str.slice(0, 3).toLowerCase() + str.slice(3).toUpperCase();
+  }
+}
+console.log(lowerCase("gamze"));
 
 // 17)Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
 console.log("*******Q17*******");
