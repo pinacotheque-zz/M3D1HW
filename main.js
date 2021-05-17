@@ -1,36 +1,5 @@
 /*
-
-
-
-
-15)
-Create a function to check from two given integers, whether one is positive and another one is negative.
-
-16)
-Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case. 
-
-17)
-Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
-
-18)
-Create a function to convert a number to a string, the content of which depends on the number's factors. Follow next example:
-
-If the number has 3 as a factor, output 'Diego'.
-If the number has 5 as a factor, output 'Riccardo'.
-If the number has 7 as a factor, output 'Stefano'.
-If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
-Examples
-28's factors are 1, 2, 4, 7, 14, 28.
-this would be a simple "Stefano".
-30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
-this would be a "DiegoRiccardo".
-34 has four factors: 1, 2, 17, and 34.
-this would be "34".
-
-19)
-Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
-
-*/
+ */
 
 // 1)Create a function to calculate the sum of the two given integers. If the two values are the same, then returns the triple of their sum.
 
@@ -169,26 +138,28 @@ longestStr("gamze", "semih");
 //     Obtuse angle: An angle between 90 and 180 degrees.
 //     Straight angle: A 180 degree angle.
 
+console.log("*******Q12*******");
 function findAngle(ang1) {
-  if (0 < ang1 < 90) {
+  if (0 <= ang1 && ang1 <= 90) {
     console.log("Acute angle");
-  } else if ((ang1 = 90)) {
+  } else if (ang1 === 90) {
     console.log("Right angle");
-  } else if (90 <= ang1 <= 180) {
+  } else if (90 < ang1 && ang1 < 180) {
     console.log("Obtuse angle");
   } else if ((ang1 = 180)) {
     console.log("Straight angle");
   } else return false;
 }
-findAngle(100);
+findAngle(180);
 
 // 13)Create a function to find the index of the greatest element of a given array of integers
+console.log("*******Q13*******");
 
 // 14)Create a function to get the largest even number from an array of integers.
-
+console.log("*******Q14*******");
 arr2 = [2, 6, 7, 4, 9, 5, 14];
 
-function largestEl() {
+function largestEl(arr) {
   largest = 0;
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] % 2 === 0 && arr2[i] > largest) {
@@ -198,3 +169,71 @@ function largestEl() {
   return largest;
 }
 console.log(largestEl());
+
+// 15)Create a function to check from two given integers, whether one is positive and another one is negative.
+console.log("*******Q15*******");
+
+function pozneg(n1, n2) {
+  if (n1 > 0 && n2 < 0) {
+    console.log("one pozitive one negative");
+  } else if (n1 < 0 && n2 > 0) {
+    console.log("one pozitive one negative");
+  } else console.log("none of them");
+}
+pozneg(4, 5);
+
+// 16)Create a function to create new string with first 3 characters are in lower case and the others in upper case.
+//If the string length is less than 3 convert all the characters in upper case.
+
+console.log("*******Q16*******");
+
+function lowerCase(str) {}
+
+// 17)Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+console.log("*******Q17*******");
+
+function integers(int1, int2) {
+  sum = int1 + int2;
+  if (50 < sum && sum < 80) {
+    return 65;
+  } else return 80;
+}
+console.log(integers(40, 24));
+
+// 18)Create a function to convert a number to a string, the content of which depends on the number's factors. Follow next example:
+// If the number has 3 as a factor, output 'Diego'.
+// If the number has 5 as a factor, output 'Riccardo'.
+// If the number has 7 as a factor, output 'Stefano'.
+// If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+// Examples
+// 28's factors are 1, 2, 4, 7, 14, 28.
+// this would be a simple "Stefano".
+// 30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+// this would be a "DiegoRiccardo".
+// 34 has four factors: 1, 2, 17, and 34.
+// this would be "34".
+
+console.log("*******Q18*******");
+
+function factors(num1) {
+  str = " ";
+  if (num1 % 3 === 0) str += "Diego";
+  if (num1 % 5 === 0) str += "Riccardo";
+  if (num1 % 7 === 0) str += "Stefano";
+  return str;
+}
+console.log(factors(30));
+
+// 19)Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+
+console.log("*******Q19*******");
+
+function acronym(phrase) {
+  const temp = phrase.split(" ");
+  let acronym = "";
+  for (let i = 0; i < temp.length; i++) {
+    acronym += temp[i].charAt(0).toUpperCase();
+  }
+  return acronym;
+}
+console.log(acronym("British Broadcasting Corporation"));
